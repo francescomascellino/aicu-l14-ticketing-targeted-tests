@@ -92,9 +92,16 @@ Dimmi:
 - perche' non serve un test browser.
 ```
 
+**Risposte:**
+
+1. **Livello**: Unit test — `computeUrgencyLabel` è una funzione pura
+2. **File**: `tests/unit/ticket-rules.test.js`
+3. **Comando**: `pnpm test:unit`
+4. **Perché non serve test browser**: La logica è trasformazione dati pura (`priority + sourceChannel → label`), senza DOM, UI o interazioni browser. `node:test` è sufficiente.
+
 ```txt
 Devo testare questo comportamento:
-`computeUrgency("critica", "sms")` non viene accettato
+validateTicketInput({ priority: "critica", sourceChannel: "sms" }) non viene accettato
 
 Repo disponibile:
 - tests/unit
@@ -109,11 +116,44 @@ Dimmi:
 - perche' non serve un test browser.
 ```
 
+**Risposte:**
+
+| Domanda | Risposta |
+|---------|----------|
+| Livello | Unit test |
+| File | `tests/unit/validation.test.js` |
+| Comando | `pnpm test:unit` |
+| Perché non browser | `validateTicketInput` è logica pura server-side — nessuna UI, DOM o interazione browser. `node:test` è sufficiente. |
+
+**Piano:**
+
+Il test verifica che `validateTicketInput({ priority: "critica", sourceChannel: "sms" })` restituisca `fieldErrors` con entrambe le chiavi `priority` e `sourceChannel`. Serve a proteggere da:
+- Accettazione accidentale di priority non valide (`"critica"`, `"urgent"`, ecc.)
+- Accettazione accidentale di sourceChannel non validi (`"sms"`, `"whatsapp"`, ecc.)
+
+
 ## Prompt 2 - generare bozza
 
 ```txt
 Scrivi un test node:test per questo comportamento:
-`computeUrgency("critica", "sms")` non viene accettato
+`alta`+`telefono` produce **intervento rapido**
+
+Vincoli:
+- usa assert.equal;
+- nome test leggibile;
+- niente framework extra;
+- niente snapshot;
+- fixture minima;
+- spiega quale rischio protegge.
+```
+
+Test creato e passa.
+
+**Rischio protetto**: la tabella `urgencyLabels` è un oggetto bidimensionale. Se qualcuno modifica accidentalmente `telefono: "intervento rapido"` → `telefono: "rapido"` o rimuove la chiave `alta`, il test lo cattura immediatamente. Senza test, il bug resterebbe silente fino al runtime in produzione.
+
+```txt
+Scrivi un test node:test per questo comportamento:
+validateTicketInput({ priority: "critica", sourceChannel: "sms" }) non viene accettato
 
 Vincoli:
 - usa assert.equal;
