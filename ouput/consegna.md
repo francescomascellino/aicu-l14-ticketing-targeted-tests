@@ -68,7 +68,7 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
 
    ```txt
    File: aicu-l12-student-starter\tests\unit\ticket-rules.test.js
-   Comando: pnpm test unit
+   Comando: pnpm test:unit
    Output: 
    ▶ computeUrgencyLabel
   ✔ alta + telefono produce intervento rapido (0.3695ms)
@@ -95,6 +95,18 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
   ✔ POST /api/tickets (37.6219ms)
    Rischio protetto: Dato fuori contract non bloccato dalla validazione
    ```
+   ##TUTTI I TEST
+   ```txt
+   ▶ POST /api/tickets
+    ✔ rifiuta ticket con priority critica e sourceChannel sms (25.5514ms)
+     ✔ POST /api/tickets (26.1524ms)
+   ▶ computeUrgencyLabel
+    ✔ alta + telefono produce intervento rapido (0.3579ms)
+    ✔ computeUrgencyLabel (0.8617ms)
+   ▶ validateTicketInput
+     ✔ rifiuta priority critica e sourceChannel sms (0.3706ms)
+    ✔ validateTicketInput (0.8686ms)
+  ```
 
 ## Prompt 1 - scegliere livello e file
 
