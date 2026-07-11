@@ -101,8 +101,8 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
      ✔ rifiuta ticket con priority critica e sourceChannel sms (25.5514ms)
      ✔ POST /api/tickets (26.1524ms)
    ▶ computeUrgencyLabel
-    ✔ alta + telefono produce intervento rapido (0.3579ms)
-    ✔ computeUrgencyLabel (0.8617ms)
+     ✔ alta + telefono produce intervento rapido (0.3579ms)
+     ✔ computeUrgencyLabel (0.8617ms)
    ▶ validateTicketInput
      ✔ rifiuta priority critica e sourceChannel sms (0.3706ms)
      ✔ validateTicketInput (0.8686ms)
