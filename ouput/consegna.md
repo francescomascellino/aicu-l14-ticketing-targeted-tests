@@ -85,7 +85,7 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
   ✔ validateTicketInput (0.896ms)
    Rischio protetto: Dato fuori contract non bloccato dalla validazione
    ```
-   ##API VERSION
+   #### API VERSION
    ```txt
    File: aicu-l12-student-starter\tests\api\tickets.test.js
    Comando: pnpm test:api
@@ -95,7 +95,7 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
   ✔ POST /api/tickets (37.6219ms)
    Rischio protetto: Dato fuori contract non bloccato dalla validazione
    ```
-   ##TUTTI I TEST
+   #### TUTTI I TEST
    ```txt
    ▶ POST /api/tickets
      ✔ rifiuta ticket con priority critica e sourceChannel sms (25.5514ms)
@@ -166,7 +166,7 @@ Il test verifica che `validateTicketInput({ priority: "critica", sourceChannel: 
 - Accettazione accidentale di priority non valide (`"critica"`, `"urgent"`, ecc.)
 - Accettazione accidentale di sourceChannel non validi (`"sms"`, `"whatsapp"`, ecc.)
 
-##API VERSION
+#### API VERSION
 ---
 **Risposte:**
 
