@@ -67,10 +67,22 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
 10. Scrivi 4 righe:
 
    ```txt
-   File:
-   Comando:
+   File: aicu-l12-student-starter\tests\unit\ticket-rules.test.js
+   Comando: pnpm test unit
+   Output: 
+   ▶ computeUrgencyLabel
+  ✔ alta + telefono produce intervento rapido (0.3695ms)
+  ✔ computeUrgencyLabel (0.9158ms)
+   Rischio protetto: L'unica combinazione che produce il label più severo non viene preservata
+   ```
+      ```txt
+   File: aicu-l12-student-starter\tests\unit\validation.test.js
+   Comando: pnpm test unit
    Output:
-   Rischio protetto:
+   ▶ validateTicketInput
+  ✔ rifiuta priority critica e sourceChannel sms (0.3815ms)
+  ✔ validateTicketInput (0.896ms)
+   Rischio protetto: Dato fuori contract non bloccato dalla validazione
    ```
 
 ## Prompt 1 - scegliere livello e file
