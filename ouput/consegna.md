@@ -71,8 +71,8 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
    Comando: pnpm test:unit
    Output: 
    ▶ computeUrgencyLabel
-  ✔ alta + telefono produce intervento rapido (0.3695ms)
-  ✔ computeUrgencyLabel (0.9158ms)
+    ✔ alta + telefono produce intervento rapido (0.3695ms)
+    ✔ computeUrgencyLabel (0.9158ms)
    Rischio protetto: L'unica combinazione che produce il label più severo non viene preservata
    ```
 
@@ -81,8 +81,8 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
    Comando: pnpm test unit
    Output:
    ▶ validateTicketInput
-  ✔ rifiuta priority critica e sourceChannel sms (0.3815ms)
-  ✔ validateTicketInput (0.896ms)
+    ✔ rifiuta priority critica e sourceChannel sms (0.3815ms)
+    ✔ validateTicketInput (0.896ms)
    Rischio protetto: Dato fuori contract non bloccato dalla validazione
    ```
    #### API VERSION
@@ -91,21 +91,21 @@ sourceChannel = whatsapp -> fieldErrors.sourceChannel
    Comando: pnpm test:api
    Output:
    ▶ POST /api/tickets
-  ✔ rifiuta ticket con priority critica e sourceChannel sms (36.8105ms)
-  ✔ POST /api/tickets (37.6219ms)
+    ✔ rifiuta ticket con priority critica e sourceChannel sms (36.8105ms)
+    ✔ POST /api/tickets (37.6219ms)
    Rischio protetto: Dato fuori contract non bloccato dalla validazione
    ```
    #### TUTTI I TEST
    ```txt
    ▶ POST /api/tickets
-     ✔ rifiuta ticket con priority critica e sourceChannel sms (25.5514ms)
-     ✔ POST /api/tickets (26.1524ms)
+    ✔ rifiuta ticket con priority critica e sourceChannel sms (25.5514ms)
+    ✔ POST /api/tickets (26.1524ms)
    ▶ computeUrgencyLabel
-     ✔ alta + telefono produce intervento rapido (0.3579ms)
-     ✔ computeUrgencyLabel (0.8617ms)
+    ✔ alta + telefono produce intervento rapido (0.3579ms)
+    ✔ computeUrgencyLabel (0.8617ms)
    ▶ validateTicketInput
-     ✔ rifiuta priority critica e sourceChannel sms (0.3706ms)
-     ✔ validateTicketInput (0.8686ms)
+    ✔ rifiuta priority critica e sourceChannel sms (0.3706ms)
+    ✔ validateTicketInput (0.8686ms)
   ```
 
 ## Prompt 1 - scegliere livello e file
